@@ -1,258 +1,291 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Puja Gupta | Frontend Lead Engineer</title>
-  <meta name="description" content="Portfolio of Puja Gupta — Frontend Lead Engineer (React, TypeScript, Micro-frontends, Real-time UI)." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Puja Gupta | Technical Lead - Frontend Engineering</title>
+  <meta name="description" content="Puja Gupta - Technical Lead (Frontend). React, TypeScript, Micro-frontends, Performance, Real-time UIs."/>
   <style>
     :root{
-      --bg:#0b0f19;
-      --card:#121a2a;
-      --text:#e8eefc;
-      --muted:#a9b4d0;
-      --border:rgba(255,255,255,0.10);
-      --accent:rgba(106,166,255,0.22);
+      --bg:#0b0f19; --card:#121a2a; --text:#e8eefc; --muted:#a9b4d0; --accent:#6aa6ff;
+      --border: rgba(255,255,255,0.08);
     }
     *{box-sizing:border-box}
     body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      margin:0; font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background: radial-gradient(1200px 600px at 10% 0%, rgba(106,166,255,0.15), transparent 50%),
+                  radial-gradient(900px 500px at 90% 10%, rgba(160,106,255,0.12), transparent 55%),
+                  var(--bg);
       color:var(--text);
-      background:
-        radial-gradient(1200px 600px at 10% 0%, rgba(106,166,255,0.20), transparent 55%),
-        radial-gradient(900px 500px at 90% 10%, rgba(160,106,255,0.12), transparent 55%),
-        var(--bg);
     }
-    a{color:inherit;text-decoration:none}
-    a:hover{color:#8ab6ff}
-    .wrap{max-width:1040px;margin:0 auto;padding:22px 16px 70px}
+    a{color:var(--text); text-decoration:none}
+    a:hover{color:var(--accent)}
+    .wrap{max-width:1020px; margin:0 auto; padding:28px 18px 80px;}
     .nav{
-      position:sticky;top:0;z-index:20;
-      display:flex;justify-content:space-between;align-items:center;
-      padding:12px 0;
-      background:rgba(11,15,25,0.60);
-      backdrop-filter: blur(10px);
-      border-bottom:1px solid var(--border);
+      display:flex; align-items:center; justify-content:space-between;
+      padding:14px 0; position:sticky; top:0; backdrop-filter: blur(10px);
+      background: rgba(11,15,25,0.65); border-bottom:1px solid var(--border); z-index:10;
     }
-    .brand{font-weight:800;letter-spacing:.2px}
-    .links a{margin-left:14px;color:var(--muted);font-size:14px}
-    .links a:hover{color:var(--text)}
-    .hero{padding:42px 0 18px}
-    .kicker{color:var(--muted);margin-bottom:10px}
-    h1{margin:0;font-size:42px;line-height:1.12}
-    .sub{margin-top:14px;color:var(--muted);max-width:75ch;line-height:1.65}
-    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+    .nav .left{font-weight:700; letter-spacing:0.3px}
+    .nav .right a{margin-left:14px; color:var(--muted)}
+    .nav .right a:hover{color:var(--text)}
+    .hero{padding:44px 0 28px; display:grid; gap:16px}
+    .kicker{color:var(--muted); letter-spacing:.3px}
+    h1{font-size:42px; margin:0; line-height:1.1}
+    .sub{font-size:16px; color:var(--muted); max-width:78ch; line-height:1.65}
+    .chips{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px}
     .chip{
-      border:1px solid var(--border);
-      background:rgba(255,255,255,0.03);
-      padding:8px 10px;border-radius:999px;font-size:13px
+      border:1px solid var(--border); background:rgba(255,255,255,0.03);
+      color:var(--text); padding:8px 10px; border-radius:999px; font-size:13px
     }
-    .cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:16px}
+    .cta{display:flex; gap:12px; flex-wrap:wrap; margin-top:10px}
     .btn{
-      padding:10px 12px;border-radius:12px;
-      border:1px solid var(--border);
-      background:rgba(255,255,255,0.04);
-      font-size:14px;
+      display:inline-flex; align-items:center; justify-content:center; gap:8px;
+      padding:10px 12px; border-radius:12px; border:1px solid var(--border);
+      background:rgba(255,255,255,0.04); color:var(--text)
     }
-    .btn.primary{background:var(--accent);border-color:rgba(106,166,255,0.35)}
-    section{margin-top:28px}
-    h2{font-size:18px;margin:0 0 12px}
-    .muted{color:var(--muted)}
-    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:14px}
+    .btn.primary{background:rgba(106,166,255,0.16); border-color:rgba(106,166,255,0.35)}
+    section{margin-top:34px}
+    .section-title{font-size:18px; margin:0 0 14px}
+    .grid{display:grid; grid-template-columns:repeat(12,1fr); gap:14px}
     .card{
       grid-column:span 12;
-      border:1px solid var(--border);
-      background:rgba(18,26,42,0.85);
-      border-radius:18px;
-      padding:16px;
-      box-shadow:0 10px 30px rgba(0,0,0,0.25);
+      border:1px solid var(--border); background:rgba(18,26,42,0.8);
+      border-radius:18px; padding:16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
     }
-    .cardTitle{font-weight:800;margin-bottom:6px}
-    .meta{color:var(--muted);font-size:13px;line-height:1.55}
-    ul{margin:10px 0 0;padding-left:18px}
-    li{margin:6px 0;color:var(--muted);line-height:1.55}
-    .pills{display:flex;flex-wrap:wrap;gap:10px}
-    .pill{
-      border:1px solid var(--border);
-      background:rgba(255,255,255,0.03);
-      padding:7px 10px;border-radius:999px;font-size:13px;color:var(--muted)
+    .card h3{margin:0 0 8px; font-size:16px}
+    .meta{color:var(--muted); font-size:13px; margin-bottom:10px; line-height:1.55}
+    .bullets{margin:0; padding-left:18px; color:var(--text)}
+    .bullets li{margin:6px 0; color:var(--muted); line-height:1.55}
+    .two .card{grid-column:span 12}
+    @media(min-width:860px){
+      .two .card{grid-column:span 6}
+      .card.half{grid-column:span 6}
     }
-    .cardLink{display:block}
-    .cardLink:hover{transform:translateY(-2px);transition:140ms}
-    .footer{margin-top:36px;color:var(--muted);font-size:13px}
-    @media(min-width:900px){
-      .half{grid-column:span 6}
-    }
+    footer{margin-top:44px; color:var(--muted); font-size:13px}
   </style>
 </head>
 
 <body>
   <div class="wrap">
-    <nav class="nav">
-      <div class="brand">Puja Gupta</div>
-      <div class="links">
+    <div class="nav">
+      <div class="left">Puja Gupta</div>
+      <div class="right">
         <a href="#about">About</a>
-        <a href="#skills">Skills</a>
+        <a href="#work">Work</a>
         <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </div>
-    </nav>
+    </div>
 
     <header class="hero">
-      <div class="kicker">Bengaluru, India · Immediate Joiner</div>
-      <h1>Frontend Lead Engineer (React · TypeScript) <br/>Real-time UI · Micro-frontends</h1>
-      <p class="sub">
-        I build scalable web platforms and real-time user interfaces with strong focus on performance,
-        clean architecture, and developer experience.
-      </p>
+      <div class="kicker">Technical Lead · Frontend Engineering · Bangalore</div>
+      <h1>Building scalable, real-time web apps with React & Micro-Frontends</h1>
+
+      <div class="sub">
+        Lead Frontend Engineer with 11+ years of experience in frontend architecture and building scalable,
+        high-performance web applications. Strong in design systems, system design, component-driven development,
+        performance optimization, AWS, and Agile/Kanban delivery.
+      </div>
 
       <div class="chips">
-        <span class="chip">React</span>
-        <span class="chip">TypeScript</span>
-        <span class="chip">Micro-frontends</span>
-        <span class="chip">Performance</span>
-        <span class="chip">WebSockets / Event-driven UI</span>
+        <div class="chip">ReactJS · TypeScript · JavaScript (ES6+)</div>
+        <div class="chip">Micro-Frontends · Webpack Module Federation</div>
+        <div class="chip">Redux · Context API · Design Systems</div>
+        <div class="chip">WebSockets · Kafka · Node.js</div>
+        <div class="chip">AWS · CI/CD · Cypress · Figma</div>
+      </div>
+
+      <div class="chips">
+        <div class="chip">~60% faster anomaly detection</div>
+        <div class="chip">~40% faster release cycles</div>
+        <div class="chip">~30% lower UI latency</div>
+        <div class="chip">~35% fewer security vulnerabilities</div>
+        <div class="chip">~45% less duplicate effort</div>
       </div>
 
       <div class="cta">
-        <a class="btn primary" href="https://www.linkedin.com/in/puja-gupta-b6715a56/" target="_blank" rel="noreferrer">LinkedIn</a>
-        <a class="btn" href="https://github.com/PujaGuptaTR" target="_blank" rel="noreferrer">GitHub</a>
+        <!-- Upload your resume to the repo with this exact filename -->
+        <a class="btn primary" href="./Puja_Gupta_Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
         <a class="btn" href="mailto:puja.ec676@gmail.com">puja.ec676@gmail.com</a>
-        <!-- Optional: add resume pdf to repo and link it -->
-        <!-- <a class="btn" href="./Puja_Gupta_Resume.pdf" target="_blank" rel="noreferrer">Resume</a> -->
+        <a class="btn" href="https://www.linkedin.com/in/puja-gupta-b6715a56/" target="_blank" rel="noreferrer">LinkedIn</a>
+        <a class="btn" href="https://github.com/guptapuja" target="_blank" rel="noreferrer">GitHub</a>
       </div>
     </header>
 
     <section id="about">
-      <h2>About</h2>
+      <h2 class="section-title">About</h2>
       <div class="card">
-        <div class="meta">
-          11+ years in frontend engineering across enterprise domains. I’ve led UI architecture,
-          built reusable component systems, and shipped reliable, high-performance React applications.
-        </div>
-        <ul>
-          <li>Frontend architecture: modular UI, micro-frontends, shared patterns</li>
-          <li>Real-time UI: monitoring dashboards, event-driven updates</li>
-          <li>Quality & delivery: testing, CI/CD, maintainable code standards</li>
+        <p class="meta">
+          Lead Frontend Engineer with 11+ years of experience in software development, frontend architecture,
+          and enterprise-scale UI delivery. Proven experience mentoring engineers, defining frontend standards,
+          and delivering measurable improvements in performance, scalability, and user experience.
+        </p>
+        <ul class="bullets">
+          <li>Frontend architecture: micro-frontends, reusable UI platforms, component-driven development</li>
+          <li>Real-time interfaces: monitoring dashboards, event-driven UX, high-throughput data rendering</li>
+          <li>Standards & leadership: code reviews, secure coding, design systems, mentoring</li>
         </ul>
       </div>
     </section>
 
-    <section id="skills">
-      <h2>Skills</h2>
-      <div class="card pills">
-        <span class="pill">React</span>
-        <span class="pill">TypeScript</span>
-        <span class="pill">JavaScript (ES6+)</span>
-        <span class="pill">Webpack</span>
-        <span class="pill">Micro-frontends</span>
-        <span class="pill">Redux / Context</span>
-        <span class="pill">Cypress</span>
-        <span class="pill">AWS</span>
-        <span class="pill">CI/CD</span>
-        <span class="pill">Figma</span>
+    <section id="work" class="two">
+      <h2 class="section-title">Work Experience</h2>
+
+      <div class="grid">
+        <div class="card">
+          <h3>Technical Lead · Thomson Reuters</h3>
+          <div class="meta">Feb 2024 – Current · Bangalore · Live Stream Monitoring</div>
+          <ul class="bullets">
+            <li>Led frontend architecture for a real-time monitoring & anomaly detection platform using React, TypeScript, WebSockets, Node.js, Kafka and AWS (~60% faster detection of frame drops).</li>
+            <li>Designed Micro-Frontend Architecture with Webpack Module Federation enabling independent deployments (reduced release cycles by ~40%).</li>
+            <li>Built high-performance real-time UI with Redux/Context, memoization, lazy loading & code splitting (~30% lower UI latency).</li>
+            <li>Mentored 4+ engineers; introduced secure coding + automated security scanning (~35% fewer vulnerabilities).</li>
+            <li>Standardized reusable UI components/design system adopted widely (reduced duplicate effort by ~45%).</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>SDE III · Zyient</h3>
+          <div class="meta">Aug 2023 – Feb 2024 · Bangalore · Open Data Discovery Platform</div>
+          <ul class="bullets">
+            <li>Built a scalable, user-centric product using ReactJS and Tailwind CSS with modular architecture.</li>
+            <li>Designed reusable UI components for consistency and faster development cycles.</li>
+            <li>Collaborated with designers using Figma; aligned design systems with dev workflows.</li>
+            <li>Deployed on AWS using cloud-native practices for availability and performance.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Senior Engineer · Maersk</h3>
+          <div class="meta">Jun 2021 – Aug 2023 · Bangalore · Maersk Flow / Maersk Spot</div>
+          <ul class="bullets">
+            <li>Built logistics dashboards using Vue.js and ReactJS within a micro-frontend architecture.</li>
+            <li>Delivered reusable components and dynamic grid UIs for complex workflows and better data visibility.</li>
+            <li>Drove delivery as IC + coordinator, ensuring alignment and execution quality.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Senior Engineer · Eli Lilly</h3>
+          <div class="meta">Feb 2020 – Apr 2021 · Bangalore · Secure Sample Request App (Trulicity)</div>
+          <ul class="bullets">
+            <li>Built a secure VueJS app on AWS with dynamic validations and compliance-focused workflows.</li>
+            <li>Delivered scalable, reusable UI components and improved performance/reliability via AWS best practices.</li>
+            <li>Partnered with cross-functional teams and iterated with Figma-driven design feedback loops.</li>
+          </ul>
+        </div>
+
+        <div class="card">
+          <h3>Earlier Roles · VMware · Harman · Cognizant</h3>
+          <div class="meta">Angular / Vue / Dashboards / Performance fixes / Modular UI</div>
+          <ul class="bullets">
+            <li>Harman: Angular dashboards with RxJS + ChartJS; simulation tools; modular architecture.</li>
+            <li>VMware: Angular components, Kendo UI widgets; optimized grid rendering and responsiveness.</li>
+            <li>Cognizant: AngularJS onboarding portal; modular UI + document workflows; cross-browser compatibility.</li>
+          </ul>
+        </div>
       </div>
     </section>
 
-    <section id="projects">
-      <h2>Projects</h2>
+    <section id="projects" class="two">
+      <h2 class="section-title">Projects</h2>
       <div class="grid">
-        <a class="card cardLink half" href="https://github.com/PujaGuptaTR" target="_blank" rel="noreferrer">
-          <div class="cardTitle">Live Monitoring Dashboard</div>
-          <div class="meta">React · TypeScript · Real-time UI</div>
-          <ul>
-            <li>Monitoring dashboard UI with event-driven updates</li>
-            <li>Performance-focused rendering patterns</li>
+        <div class="card">
+          <h3>Live Stream Monitoring Platform</h3>
+          <div class="meta">React · TypeScript · WebSockets · Kafka · AWS</div>
+          <ul class="bullets">
+            <li>Real-time monitoring dashboard for stream observability and anomaly detection.</li>
+            <li>Micro-frontend architecture + performance optimizations for high throughput UI.</li>
           </ul>
-        </a>
+        </div>
 
-        <a class="card cardLink half" href="https://github.com/PujaGuptaTR" target="_blank" rel="noreferrer">
-          <div class="cardTitle">Micro-frontend Demo</div>
-          <div class="meta">Module Federation · Webpack</div>
-          <ul>
-            <li>Host + remote apps with independent deployment</li>
-            <li>Shared UI components + routing</li>
+        <div class="card">
+          <h3>Reusable UI Platform / Design System</h3>
+          <div class="meta">Design Systems · Component Libraries · Standards</div>
+          <ul class="bullets">
+            <li>Standardized reusable components and patterns for faster enterprise delivery.</li>
+            <li>Focused on accessibility, consistency, and developer experience.</li>
           </ul>
-        </a>
+        </div>
 
-        <a class="card cardLink half" href="https://github.com/PujaGuptaTR" target="_blank" rel="noreferrer">
-          <div class="cardTitle">Frontend Interview Notes</div>
-          <div class="meta">System Design · DSA · JS</div>
-          <ul>
-            <li>Structured notes and practical examples</li>
-            <li>Cheat-sheets for fast revision</li>
+        <div class="card">
+          <h3>Micro-Frontend Architecture (Module Federation)</h3>
+          <div class="meta">Webpack · Independent Deployments · Shared UI</div>
+          <ul class="bullets">
+            <li>Enabled autonomous team releases and scalable frontend composition.</li>
+            <li>Patterns for shared routing, shared components, and performance safety.</li>
           </ul>
-        </a>
+        </div>
 
-        <a class="card cardLink half" href="https://github.com/PujaGuptaTR" target="_blank" rel="noreferrer">
-          <div class="cardTitle">UI Components / Utilities</div>
-          <div class="meta">Reusable patterns</div>
-          <ul>
-            <li>Reusable components and utilities for production apps</li>
-            <li>Focus on clean API + scalability</li>
+        <div class="card">
+          <h3>Logistics Dashboards</h3>
+          <div class="meta">Vue.js · React · Dynamic Grids</div>
+          <ul class="bullets">
+            <li>Dashboards that improved data visibility and interactions across complex workflows.</li>
+            <li>Reusable grid components and UI modules.</li>
           </ul>
-        </a>
+        </div>
       </div>
-      <p class="muted" style="margin-top:10px">
-        (We’ll replace these links with your exact repositories once you tell me which 3–4 repos to feature.)
-      </p>
+
+      <div class="meta" style="margin-top:10px">
+        Want this section to link to your real GitHub repos? Send 3–5 repo URLs and I’ll wire them in.
+      </div>
     </section>
 
-    <section id="experience">
-      <h2>Experience</h2>
+    <section id="skills" class="two">
+      <h2 class="section-title">Skills</h2>
       <div class="grid">
-        <div class="card half">
-          <div class="cardTitle">Thomson Reuters</div>
-          <div class="meta">Lead / Technical Lead Engineer · Feb 2024 – Feb 2026</div>
-          <ul>
-            <li>Led frontend architecture for real-time monitoring platform</li>
-            <li>Built scalable UI patterns and improved performance & reliability</li>
+        <div class="card">
+          <h3>Frontend</h3>
+          <ul class="bullets">
+            <li>ReactJS, TypeScript, JavaScript (ES6+)</li>
+            <li>Redux, Context API, Design Systems</li>
+            <li>Micro-Frontends, Webpack, performance optimization</li>
           </ul>
         </div>
-
-        <div class="card half">
-          <div class="cardTitle">Zyient</div>
-          <div class="meta">Software Engineer III · Apr 2022 – Feb 2024</div>
-          <ul>
-            <li>Built dashboards and component-driven UI with strong UX focus</li>
-            <li>Collaborated with product/design to ship releases</li>
-          </ul>
-        </div>
-
-        <div class="card half">
-          <div class="cardTitle">Maersk</div>
-          <div class="meta">Senior Software Engineer · Oct 2019 – Apr 2022</div>
-          <ul>
-            <li>Developed workflow UIs and dashboards used by ops teams</li>
-            <li>Improved maintainability via modular UI patterns</li>
-          </ul>
-        </div>
-
-        <div class="card half">
-          <div class="cardTitle">Earlier</div>
-          <div class="meta">VMware · Harman · Cognizant (and others)</div>
-          <ul>
-            <li>Enterprise UI engineering, feature delivery, performance improvements</li>
+        <div class="card">
+          <h3>Platform & Delivery</h3>
+          <ul class="bullets">
+            <li>Node.js, WebSockets, Kafka</li>
+            <li>AWS, CI/CD, Cypress</li>
+            <li>Agile / Kanban, mentoring, code reviews</li>
           </ul>
         </div>
       </div>
     </section>
 
     <section id="contact">
-      <h2>Contact</h2>
+      <h2 class="section-title">Contact</h2>
       <div class="card">
-        <div class="meta">Open to Frontend Lead / Staff Frontend roles.</div>
+        <div class="meta">
+          Bangalore · Open to Frontend Lead / Staff-level Frontend opportunities.
+        </div>
         <div class="cta">
           <a class="btn primary" href="mailto:puja.ec676@gmail.com">Email me</a>
           <a class="btn" href="https://www.linkedin.com/in/puja-gupta-b6715a56/" target="_blank" rel="noreferrer">LinkedIn</a>
-          <a class="btn" href="https://github.com/PujaGuptaTR" target="_blank" rel="noreferrer">GitHub</a>
+          <a class="btn" href="https://github.com/guptapuja" target="_blank" rel="noreferrer">GitHub</a>
         </div>
       </div>
     </section>
 
-    <div class="footer">© <span id="y"></span> Puja Gupta · Hosted on GitHub Pages</div>
+    <section id="interests">
+      <h2 class="section-title">Interests</h2>
+      <div class="card">
+        <ul class="bullets">
+          <li>Travelling</li>
+          <li>Fitness</li>
+          <li>Painting</li>
+          <li>Vintage aesthetics</li>
+        </ul>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="y"></span> Puja Gupta · Built with HTML/CSS · Hosted on GitHub Pages
+    </footer>
   </div>
 
   <script>
